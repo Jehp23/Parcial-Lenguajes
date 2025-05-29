@@ -1,0 +1,29 @@
+<!DOCTYPE html> 
+<html lang="es"> 
+<head>
+  <meta charset="UTF-8"> 
+  <meta name="viewport" content="width=device-width, initial-scale=1"> 
+  <title>Formulario de Registración</title> 
+  <link rel="stylesheet" href="style.css"> 
+</head>
+<body>
+
+  <!-- Título centrado -->
+  <h2 style="text-align:center">Formulario de Registracion</h2>
+
+  <!-- Formulario de registro con varios campos de entrada -->
+  <form id="registroForm">
+    <input type="text" id="apellido" placeholder="Apellido" required> 
+    <input type="text" id="nombre" placeholder="Nombre" required> 
+    <input type="text" id="dni" placeholder="DNI (8 dígitos)" required> 
+    <input type="date" id="fechaNacimiento" required> 
+    <input type="email" id="email" placeholder="Correo Electronico" required>
+    <button type="button" onclick="validarFormulario()">Validar Formulario</button> 
+    <button type="button" onclick="hacerPreguntas()">Responder Preguntas</button>
+  </form>
+
+  <!-- Div donde se mostrarán las respuestas o mensajes -->
+  <div id="respuestas"></div>
+  <script src="script.js"></script>
+</body>
+</html>
