@@ -1,0 +1,4 @@
+Link = https://jehp23.github.io/Parcial-Lenguajes/
+Nombre = Lazarte Luciano Tadeo
+DNI = 45120051
+
