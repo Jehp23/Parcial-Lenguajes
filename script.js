@@ -37,21 +37,43 @@ function validarFormulario() {
     return;
   }
 
-  // Si todo esta bien, muestra mensaje de exito
+  // Si todo esta bien, muestra mensaje de exito y habilita el boton de preguntas
   alert("¡Formulario enviado!");
+  document.getElementById("btnPreguntas").disabled = false;
 }
 
 function hacerPreguntas() {
   const nacionalidad = prompt("¿Cual es tu nacionalidad?");
   const colorFavorito = prompt("¿Cual es tu color favorito?");
   const mascota = prompt("¿Como se llama tu mascota?");
+  const videojuego = prompt("¿Cual es tu videojuego favorito?");
 
-  // Muestra las respuestas en el div con id "respuestas"
+  // Validar que ninguna respuesta esté vacía
+  if (
+    !nacionalidad || !colorFavorito || !mascota || !videojuego
+  ) {
+    alert("Por favor, responde todas las preguntas.");
+    return;
+  }
+
+  // Validar que ninguna respuesta tenga numeros
+  if (
+    /\d/.test(nacionalidad) ||
+    /\d/.test(colorFavorito) ||
+    /\d/.test(mascota) ||
+    /\d/.test(videojuego)
+  ) {
+    alert("Las respuestas no deben tener numeros.");
+    return;
+  }
+
+  // Si todo está bien, mostrar las respuestas
   const respuestasDiv = document.getElementById("respuestas");
   respuestasDiv.innerHTML = `
     <h3>Respuestas:</h3>
     <p><strong>Nacionalidad:</strong> ${nacionalidad}</p>
     <p><strong>Color Favorito:</strong> ${colorFavorito}</p>
     <p><strong>Nombre de Mascota:</strong> ${mascota}</p>
+    <p><strong>Videojuego Favorito:</strong> ${videojuego}</p>
   `;
 }
